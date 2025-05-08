@@ -1,0 +1,33 @@
+// pipeline {
+//     agent any
+
+//     stages {
+//         stage('clone') {
+//             steps {
+//                git branch: 'main', url: 'https://github.com/CloudTechDevOps/Terraform_CICD.git'
+//             }
+//         }
+//         stage('init') {
+//             steps {
+//                 sh 'terraform init'
+//             }
+//         }
+//          stage('plan') {
+//             steps {
+//                 sh 'terraform plan'
+//             }
+//         }
+//     }
+// }
+
+
+resource "aws_instance" "webk1" {
+    ami="ami-062f0cc54dbfd8ef1"
+    instance_type = "t2.medium"
+    subnet_id= "subnet-0d69e6690e3acc82c"
+
+    tags= {
+              Name= "web"
+  
+}
+}
