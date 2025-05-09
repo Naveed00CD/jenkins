@@ -9,12 +9,12 @@ pipeline {
         }
         stage('init') {
             steps {
-                sh 'terraform init'
+                sh 'touch file10'
             }
         }
          stage('plan') {
             steps {
-                sh 'terraform plan'
+                sh 'touch fil100'
             }
         }
     }
